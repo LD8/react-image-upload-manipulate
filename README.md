@@ -15,4 +15,4 @@ $ npm run dev
 ```
 
 
-PS. for detail building process please check _process journal_ [here](###) or [on my blog](###)
+PS. for detail building process please check _process journal_ [here](https://github.com/LD8/react-image-upload-manipulate/blob/master/process_journal.md) or [on my blog](https://donlee.online/blog/posts/56/react-image-upload-and-crop)

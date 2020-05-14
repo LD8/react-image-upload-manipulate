@@ -6,6 +6,8 @@ I've received an interview test where I was asked to build a simple website, fun
 2. after which user can zoom in/out and crop the image
 3. 3 buttons (corresponding to zoom in, zoom out and crop) should be built on a floating tool bar
 
+Note: eventually, I realise that with one function - cropping the image, it is sufficient to zoom in/out. Therefore, no need the above point 2 and 3. However, the other steps should be followed.
+
 There should be a frontend to upload, display and manipulate the image as well as a backend service to receive and retrieve the image.
 
 ## Backend
@@ -254,7 +256,11 @@ $ npm install
 $ npm run dev
 ```
 
-PS. you can also find this _process journal_ [on my blog](###) as well
+---
+
+PS. you can also find this _process journal_ [on my blog](https://donlee.online/blog/posts/56/react-image-upload-and-crop)
+
+---
 
 #### Thanks for the tutorial videos produced by the following AMAZING youtubers:
 
