@@ -9,10 +9,10 @@ $ cd client
 $ npm install
 ```
 
-2. serve on `localhost:3000`
+2. serve frontend on `localhost:3000` & backend on `localhost:5000` with one command
 ```bash
 $ npm run dev
 ```
 
 
-PS. for detail building process please check _documentation of process_ [here](###) or [on my blog](###)
+PS. for detail building process please check _process journal_ [here](###) or [on my blog](###)
