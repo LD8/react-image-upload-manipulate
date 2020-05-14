@@ -1,34 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef } from "react";
+import "cropperjs/dist/cropper.min.css";
+import Cropper from "cropperjs";
 
 export const ImageDisplay = ({ file: { fileName, filePath } }) => {
-  const [style, setStyle] = useState({ width: "300px", transition: "all 0.3s ease" });
-  const [scale, setScale] = useState(1);
-  const zoomIn = () => {
-    setScale(scale + 0.1);
-  };
-  const zoomOut = () => {
-    setScale(scale - 0.1);
-  };
+  const [imagePreview, setImagePreview] = useState("");
+  const imageElement = createRef();
 
   useEffect(() => {
-    setStyle({ ...style, transform: `scale(${scale})` });
-  }, [scale]);
+    const cropper = new Cropper(imageElement.current, {
+      zoomable: true,
+      scalable: false,
+      aspectRatio: 1,
+      crop: () => {
+        const canvas = cropper.getCroppedCanvas();
+        setImagePreview(canvas.toDataURL("image/jpg"));
+      },
+    });
+  }, [imageElement]);
+
   return (
     <div className="d-flex flex-column align-items-center my-3">
       <h4 className="text-center mb-2">{fileName}</h4>
-      <div style={{ overflow: "hidden" }} className="border rounded-lg shadow">
-        <img src={filePath} alt="uploaded file" style={style} />
-      </div>
       <div
-        className="shadow border rounded-lg mt-4 d-flex justify-content-between align-items-center"
-        style={{ width: "200px", height: "60px" }}
+        style={{ overflow: "hidden" }}
+        className="border rounded-lg d-flex shadow"
       >
-        <button className="btn btn-secondary text-white mx-2" onClick={zoomIn}>
-          +
-        </button>
-        <button className="btn btn-secondary text-white mx-2" onClick={zoomOut}>
-          -
-        </button>
+        <img
+          ref={imageElement}
+          src={filePath}
+          alt="uploaded file"
+          style={{ width: "300px", transition: "all 0.3s ease" }}
+        />
+        <img
+          src={imagePreview}
+          style={{ height: "200px", width: "200px" }}
+          alt="Preview"
+          className="ml-3"
+        />
       </div>
     </div>
   );

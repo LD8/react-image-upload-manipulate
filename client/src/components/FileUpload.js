@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ImageDisplay } from "./ImageDisplay";
 import { Message } from "./Message";
-import { ToolBar } from "./ToolBar";
 import axios from "axios";
 
 export const FileUpload = () => {
@@ -61,7 +60,6 @@ export const FileUpload = () => {
       </form>
       {message && <Message msg={message} />}
       {uploadedFile && <ImageDisplay file={uploadedFile} />}
-      <ToolBar />
     </>
   );
 };
