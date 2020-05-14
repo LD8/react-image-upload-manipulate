@@ -1,0 +1,31 @@
+{
+  "name": "react-image-upload-manipulate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LD8/react-image-upload-manipulate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LD8/react-image-upload-manipulate/issues"
+  },
+  "homepage": "https://github.com/LD8/react-image-upload-manipulate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
+  }
+}
